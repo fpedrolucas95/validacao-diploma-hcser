@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Título da página -->
+    <title>HCSer Consultoria - Validação</title>
+
+    <!-- Estilos -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+
+    <!-- Ícone da página -->
+    <link rel="icon" href="images/logo.png" />
+</head>
+
+<body>
+    <div class="relative">
+        <a href="https://www.hcserconsultoria.com.br">
+            <img src="/images/logo.png" alt="Logo" class="absolute top-10 left-10 w-16 h-16">
+        </a>
+        <!-- Restante do conteúdo da página -->
+    </div>
+
+
+    <!-- Aplicação -->
+    <header id="header" class="header py-28 text-center md:pt-36 lg:text-left xl:pt-44 xl:pb-32">
+        <div class="container px-4 sm:px-8 lg:grid lg:grid-cols-2 lg:gap-x-8">
+            <div class="mb-16 lg:mt-32 xl:mt-40 xl:mr-12">
+                <h1 class="h1-large mb-5">Verificação de autenticidade</h1>
+                <p class="p-large mb-8">Verifique aqui a autenticidade do seu certificado HCSer</p>
+                <input type="text" id="codigo" name="codigo"
+                    class="border py-2 px-3 rounded-md w-full md:w-full lg:w-full xl:w-full">
+                <br>
+                <button onclick="verificarCertificado()"
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">Verificar</button>
+                <br><br>
+                <p id="resultado" class="p-large"></p>
+            </div>
+            <div class="xl:text-right">
+                <img class="inline" src="images/enfermeiros.png" alt="alternative" />
+            </div>
+        </div>
+    </header>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

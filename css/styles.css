@@ -1,0 +1,79 @@
+body,
+p {
+    color: #6b747b;
+    font: 400 1rem/1.625rem "Open Sans", sans-serif;
+}
+
+h1 {
+    color: #252c38;
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 3.125rem;
+    letter-spacing: -0.5px;
+}
+
+h2 {
+    color: #252c38;
+    font-weight: 700;
+    font-size: 2.125rem;
+    line-height: 2.625rem;
+    letter-spacing: -0.4px;
+}
+
+h3 {
+    color: #252c38;
+    font-weight: 700;
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    letter-spacing: -0.3px;
+}
+
+h4 {
+    color: #252c38;
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    letter-spacing: -0.2px;
+}
+
+h5 {
+    color: #252c38;
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+}
+
+h6 {
+    color: #252c38;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.375rem;
+}
+
+.h1-large {
+    font-size: 2.875rem;
+    line-height: 3.5rem;
+}
+
+.p-large {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+}
+
+.p-small {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+}
+
+.bg-gray {
+    background-color: #f1f9fc;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header {
+    background: linear-gradient(rgba(197, 234, 249, 1), rgba(255, 255, 255, 1));
+}

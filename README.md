@@ -5,7 +5,7 @@
 
 <H2>Problema a ser resolvido</H2>
 <p>O problema que esse projeto busca resolver é a verificação da autenticidade dos certificados emitidos pela HCSer Consultoria. Como a validade desses certificados é muito importante para os clientes, é necessário que haja uma maneira simples e eficaz de verificar a sua autenticidade. 
-Além disso, a escolha de utilizar um arquivo de texto (txt) como banco de informações para armazenar os códigos dos certificados válidos foi pensada de forma estratégica. A cliente já possui o hábito de utilizar esse tipo de arquivo para fazer o controle dos seus certificados, o que torna a implementação do validador ainda mais fácil e prática, sem alterar a sua rotina de trabalho.</p>
+Além disso, a escolha de utilizar um arquivo de planilha como banco de informações para armazenar os códigos dos certificados válidos foi pensada de forma estratégica. A cliente já possui o hábito de utilizar esse tipo de arquivo para fazer o controle dos seus certificados, o que torna a implementação do validador ainda mais fácil e prática, sem alterar a sua rotina de trabalho.</p>
 <H2>Tecnologias utilizadas</H2>
 <p>O projeto foi desenvolvido utilizando as seguintes tecnologias:</p>
 <ul>
@@ -13,6 +13,7 @@ Além disso, a escolha de utilizar um arquivo de texto (txt) como banco de infor
   <li>CSS</li>
   <li>JavaScript</li>
   <li>Tailwind CSS</li>
+  <li>Google Sheets</li>
 </ul>
 <h2>Soluções simples mas eficazes para o cliente</h2>
 <p>A solução mais simples e eficaz que o projeto oferece para o cliente é a possibilidade de verificar a autenticidade dos seus certificados de forma rápida e fácil. Basta acessar a página, inserir o código do certificado e verificar se o certificado é válido ou não. Com isso, o aluno pode ter certeza de que os certificados emitidos pela HCSer Consultoria são autênticos e confiáveis.</p>

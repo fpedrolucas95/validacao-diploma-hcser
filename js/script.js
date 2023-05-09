@@ -15,13 +15,8 @@ function formatarData(dataStr) {
 async function verificarCertificado() {
     const codigo = document.getElementById("codigo").value.trim();
 
-    const spreadsheetID = 'ID DA PLANILHA';
+    const spreadsheetID = "ID_DA_PLANILHA";
     const url = `https://docs.google.com/spreadsheets/d/${spreadsheetID}/gviz/tq?tqx=out:json`;
-
-    // Buscar os valores da coluna I ao invés das colunas A a I
-    const data = await fetch(url)
-        .then(res => res.text())
-        .then(text => JSON.parse(text.substr(47).slice(0, -2)));
 
     try {
         const response = await fetch(url);
@@ -37,7 +32,7 @@ async function verificarCertificado() {
                 nome = entries[i].c[1].v;
                 curso = entries[i].c[4].v;
                 duracao = entries[i].c[5].v;
-                conclusao = formatarData(entries[i].c[6].v); // formatar a data corretamente
+                conclusao = entries[i].c[6].f; // obter a fórmula de formatação da data diretamente da planilha
                 break;
             }
         }
@@ -45,14 +40,10 @@ async function verificarCertificado() {
         // Exibir o resultado da verificação na página
         const resultado = document.getElementById("resultado");
         if (row) {
-            resultado.innerHTML = `<i class="fas fa-check-circle"></i> Prezado(a) <b>${nome}</b>,<br>
-            É com grande satisfação que informamos que seu certificado do curso <b>${curso}</b> é autêntico e válido.<br>
-            <br>
-            Parabéns pelo seu desempenho e dedicação durante o curso.
-            <br><br>
-            Atenciosamente,<br>
-            Hilda Carla Marques Vieira.
-            `;
+            const dateStr = conclusao.replace("=text(", "").replace(/,"dd\/mm\/yyyy"\)/, ""); // extrair a data da fórmula de formatação
+            const dateParts = dateStr.split("/");
+            const date = new Date(dateParts[2], dateParts[1] - 1, dateParts[0]); // criar um objeto Date com as partes da data
+            resultado.innerHTML = `<i class="fas fa-check-circle"></i> Prezado(a) <b>${nome}</b>,<br><br> É com grande satisfação que informamos a autenticidade e validade do certificado do curso <b>${curso}</b>, que foi concluído em <b>${date.toLocaleDateString()}</b>. Parabenizamos pelo seu desempenho e dedicação durante o curso. <br><br> Atenciosamente,<br> Hilda Carla Marques Vieira.`;
             resultado.classList.remove("text-red-500");
             resultado.classList.add("text-green-500");
         } else {
@@ -64,7 +55,7 @@ async function verificarCertificado() {
         // Lidar com possíveis erros de requisição
         const resultado = document.getElementById("resultado");
         resultado.innerHTML =
-            "Erro ao acessar a planilha. Verifique se o URL da planilha está correto e se a planilha está pública e acessível a todos.";
+            "Erro ao acessar a planilha. Verifique se a URL da planilha está correto e se a planilha está pública e acessível a todos.";
         resultado.classList.remove("text-green-500");
         resultado.classList.add("text-red-500");
         console.error(error);
